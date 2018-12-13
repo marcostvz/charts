@@ -101,6 +101,7 @@ Parameter | Description | Default
 `alertmanager.baseURL` | The external url at which the server can be accessed | `/`
 `alertmanager.extraArgs` | Additional alertmanager container arguments | `{}`
 `alertmanager.configMapOverrideName` | Prometheus alertmanager ConfigMap override where full-name is `{{.Release.Name}}-{{.Values.alertmanager.configMapOverrideName}}` and setting this value will prevent the default alertmanager ConfigMap from being generated | `""`
+`alertmanager.useConfigmapReload` | Enables the usage of configmap-reload as sidecar | `true`
 `alertmanager.ingress.enabled` | If true, alertmanager Ingress will be created | `false`
 `alertmanager.ingress.annotations` | alertmanager Ingress annotations | `{}`
 `alertmanager.ingress.extraLabels` | alertmanager Ingress additional labels | `{}`
@@ -237,6 +238,7 @@ Parameter | Description | Default
 `server.extraConfigmapMounts` | Additional Prometheus server configMap mounts | `[]`
 `server.extraSecretMounts` | Additional Prometheus server Secret mounts | `[]`
 `server.configMapOverrideName` | Prometheus server ConfigMap override where full-name is `{{.Release.Name}}-{{.Values.server.configMapOverrideName}}` and setting this value will prevent the default server ConfigMap from being generated | `""`
+`server.useConfigmapReload` | Enables the usage of configmap-reload as sidecar | `true`
 `server.ingress.enabled` | If true, Prometheus server Ingress will be created | `false`
 `server.ingress.annotations` | Prometheus server Ingress annotations | `[]`
 `server.ingress.extraLabels` | Prometheus server Ingress additional labels | `{}`
